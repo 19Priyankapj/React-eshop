@@ -9,6 +9,8 @@ import Login from '../Component/auth/login'
 import Store from './../screens/Product/store';
 import ProductCart from './../screens/Cart/ProductCart';
 import Productcheckout from './../screens/Checkout/Productcheckout';
+import SingleProduct from "../screens/Product/SingleProduct"
+
 
 
 function Container(){
@@ -18,6 +20,8 @@ function Container(){
                 <Route path={`/`} element={<Store/>}/>
                 <Route path={`/cart`} element={<ProductCart/>}/>
                 <Route path={`/checkout`} element={<Productcheckout/>}/>
+                <Route path={`/product/:id`} element={<SingleProduct/>}/>
+
             </Route>
             <Route path={'/about'} element={<About/>}/>
             <Route path={'/contact'} element={<Contact/>}/>
