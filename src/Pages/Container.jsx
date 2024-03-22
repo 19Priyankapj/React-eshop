@@ -13,6 +13,7 @@ import SingleProduct from "../screens/Product/SingleProduct"
 
 
 
+
 function Container(){
     return(
         <Routes>
@@ -21,6 +22,8 @@ function Container(){
                 <Route path={`/cart`} element={<ProductCart/>}/>
                 <Route path={`/checkout`} element={<Productcheckout/>}/>
                 <Route path={`/product/:id`} element={<SingleProduct/>}/>
+                <Route path={`/login`} element={<Login/>}/>
+
 
             </Route>
             <Route path={'/about'} element={<About/>}/>
