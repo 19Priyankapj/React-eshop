@@ -10,6 +10,7 @@ import Store from './../screens/Product/store';
 import ProductCart from './../screens/Cart/ProductCart';
 import Productcheckout from './../screens/Checkout/Productcheckout';
 import SingleProduct from "../screens/Product/SingleProduct"
+import PrivateRoute from "../PrivateRouter/PrivateRoute"
 
 
 
@@ -17,20 +18,20 @@ import SingleProduct from "../screens/Product/SingleProduct"
 function Container(){
     return(
         <Routes>
-            <Route path=  {`/`} element={<Home/>}>
-                <Route path={`/`} element={<Store/>}/>
-                <Route path={`/cart`} element={<ProductCart/>}/>
-                <Route path={`/checkout`} element={<Productcheckout/>}/>
-                <Route path={`/product/:id`} element={<SingleProduct/>}/>
-                <Route path={`/login`} element={<Login/>}/>
-
-
+            <Route element= {<PrivateRoute/>}>
+                <Route path=  {`/`} element={<Home/>}>
+                    <Route path={`/`} element={<Store/>}/>
+                    <Route path={`/cart`} element={<ProductCart/>}/>
+                    <Route path={`/product/:id`} element={<SingleProduct/>}/>
+                    <Route path={`/checkout`} element={<Productcheckout/>}/>
+                </Route>
+                <Route path={'/about'} element={<About/>}/>
+                <Route path={'/contact'} element={<Contact/>}/>
             </Route>
-            <Route path={'/about'} element={<About/>}/>
-            <Route path={'/contact'} element={<Contact/>}/>
-            <Route path={'/login'} element={<Pnf/>}/>
-            <Route path={'/register'} element={<Login/>}/>
-            <Route path={'/*'} element={<Register/>}/>
+           
+            <Route path={'/login'} element={<Login/>}/>
+            <Route path={'/register'} element={<Register/>}/>
+            <Route path={'/*'} element={<Pnf/>}/>
         </Routes>
     )
 
